@@ -17,10 +17,38 @@
             color: white;
             text-align: center;
             padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         header h1 {
             margin: 0;
             font-size: 2.5rem;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            display: block;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #4CAF50;
         }
         section {
             max-width: 900px;
@@ -64,9 +92,16 @@
 
 <header>
     <h1>Endacho Portfolio</h1>
+    <nav>
+        <ul>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Связь</a></li>
+            <li><a href="#steam">Стим</a></li>
+        </ul>
+    </nav>
 </header>
 
-<section>
+<section id="portfolio">
     <h2>Обо мне</h2>
     <p>Привет! Меня зовут Endacho, мне 15 лет, и я уже 2 года занимаюсь программированием. За это время я создал несколько проектов, и вот некоторые из них.</p>
 </section>
@@ -91,8 +126,8 @@
     </div>
 
     <div class="project">
-        <h3>Проект 3: Устоновщик</h3>
-        <p>Устоновщик.exe еще в разроботке, скоро будет на сайте</p>
+        <h3>Проект 3: Установщик</h3>
+        <p>Установщик.exe еще в разработке, скоро будет на сайте</p>
         <a href="" target="_blank">
             <img src="" alt="Пусто!">
         </a>
@@ -100,13 +135,15 @@
 
 </section>
 
-<section>
-    <h2>Contact</h2>
+<section id="contact">
+    <h2>Связь</h2>
     <p>Свяжитесь со мной через email: <a href="mailto:ivan43454r43ryt4343@gmail.com">ivan43454r43ryt4343@gmail.com</a></p>
+    <p>Свяжитесь со мной через discord: <a href="mailto:discord.com">endacho.free</a></p>
 </section>
 
-<section>
-    <p>Свяжитесь со мной через discord: <a href="mailto:discord.com">endacho.free</a></p>
+<section id="steam">
+    <h2>Steam</h2>
+    <p>Добавьте меня в <a href="https://steamcommunity.com/" target="_blank">Steam</a>, чтобы пообщаться!</p>
 </section>
 
 <footer>
