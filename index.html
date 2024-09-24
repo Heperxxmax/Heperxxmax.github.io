@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Endacho Portfolio</title>
+    <title>Портфолио Endacho</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f0f0f5;
+            background-color: #e8f0f2; /* Светло-синий фон */
             color: #333;
             margin: 0;
             padding: 0;
+            transition: background-color 0.5s; /* Плавный переход для фона */
         }
         header {
-            background-color: #4CAF50;
+            background-color: #4a90e2; /* Мягкий синий цвет для заголовка */
             color: white;
             text-align: center;
             padding: 20px;
@@ -21,20 +22,13 @@
             top: 0;
             z-index: 100;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        nav {
-            margin-top: 10px;
-        }
         nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
-            background-color: #333;
+            background-color: #336699; /* Темно-синий для навигации */
         }
         nav ul li {
             margin: 0 15px;
@@ -45,56 +39,47 @@
             padding: 10px 20px;
             display: block;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s; /* Добавление трансформации */
         }
         nav ul li a:hover {
-            background-color: #4CAF50;
+            background-color: #4a90e2; /* Цвет фона при наведении */
+            transform: scale(1.05); /* Эффект увеличения */
         }
         section {
             max-width: 900px;
             margin: 20px auto;
             padding: 20px;
-            background-color: white;
+            background-color: #ffffff; /* Белый фон для секций */
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s; /* Плавный переход для секций */
         }
-        section h2 {
-            color: #4CAF50;
-        }
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-        }
-        .project {
-            margin-bottom: 20px;
-        }
-        .project img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-        }
-        .project a {
-            text-decoration: none;
-            color: #4CAF50;
-            font-weight: bold;
+        section:hover {
+            transform: translateY(-5px); /* Эффект поднятия при наведении */
         }
         footer {
             text-align: center;
             margin-top: 20px;
             padding: 10px;
-            background-color: #4CAF50;
+            background-color: #4a90e2; /* Мягкий синий цвет для подвала */
             color: white;
+        }
+        a {
+            color: #336699; /* Цвет для ссылок */
+            transition: color 0.3s; /* Плавный переход цвета */
+        }
+        a:hover {
+            color: #4a90e2; /* Цвет при наведении на ссылки */
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Endacho Portfolio</h1>
+    <h1>Портфолио Endacho</h1>
     <nav>
         <ul>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#portfolio">Портфолио</a></li>
             <li><a href="#contact">Связь</a></li>
             <li><a href="#steam">Стим</a></li>
         </ul>
@@ -104,35 +89,6 @@
 <section id="portfolio">
     <h2>Обо мне</h2>
     <p>Привет! Меня зовут Endacho, мне 15 лет, и я уже 2 года занимаюсь программированием. За это время я создал несколько проектов, и вот некоторые из них.</p>
-</section>
-
-<section>
-    <h2>Проекты</h2>
-    
-    <div class="project">
-        <h3>Проект 1: Дискорд Бот для крупного проекта по GTA 5 RP</h3>
-        <p>Снизу скрин основного функционала бота на Python</p>
-        <a href="https://imgur.com/a/cJwieEo" target="_blank">
-            <img src="https://imgur.com/a/cJwieEo" alt="Кликабельно">
-        </a>
-    </div>
-
-    <div class="project">
-        <h3>Проект 2: Сайт для портфолио</h3>
-        <p>Сайт на котором вы сейчас находитесь</p>
-        <a href="https://imgur.com/a/LyvEVc6" target="_blank">
-            <img src="https://imgur.com/a/LyvEVc6" alt="Logo">
-        </a>
-    </div>
-
-    <div class="project">
-        <h3>Проект 3: Установщик</h3>
-        <p>Установщик.exe еще в разработке, скоро будет на сайте</p>
-        <a href="" target="_blank">
-            <img src="" alt="Пусто!">
-        </a>
-    </div>
-
 </section>
 
 <section id="contact">
@@ -147,7 +103,7 @@
 </section>
 
 <footer>
-    <p>© 2024 Endacho Portfolio</p>
+    <p>© 2024 Портфолио Endacho</p>
 </footer>
 
 </body>
