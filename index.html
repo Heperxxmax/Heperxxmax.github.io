@@ -3,150 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио Endacho</title>
+    <title>Прогноз Погоды</title>
+    <script src="/eel.js"></script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #e8f0f2; /* Светло-синий фон */
-            color: #333;
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.5s; /* Плавный переход для фона */
-        }
-        header {
-            background-color: #4a90e2; /* Мягкий синий цвет для заголовка */
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+            background: #0e0e0e;
+            color: #ffffff;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            background-color: #336699; /* Темно-синий для навигации */
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
-        nav ul li {
-            margin: 0 15px;
+        
+        h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            color: #1db954;
+            margin-bottom: 1rem;
         }
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            padding: 10px 20px;
-            display: block;
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.3s; /* Добавление трансформации */
-        }
-        nav ul li a:hover {
-            background-color: #4a90e2; /* Цвет фона при наведении */
-            transform: scale(1.05); /* Эффект увеличения */
-        }
-        section {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ffffff; /* Белый фон для секций */
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s; /* Плавный переход для секций */
-        }
-        section:hover {
-            transform: translateY(-5px); /* Эффект поднятия при наведении */
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
+        
+        input, button {
             padding: 10px;
-            background-color: #4a90e2; /* Мягкий синий цвет для подвала */
-            color: white;
+            font-size: 1.2rem;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            outline: none;
         }
-        a {
-            color: #336699; /* Цвет для ссылок */
-            transition: color 0.3s; /* Плавный переход цвета */
+
+        input {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
         }
-        a:hover {
-            color: #4a90e2; /* Цвет при наведении на ссылки */
+
+        button {
+            background-color: #1db954;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-        .project {
-            margin-bottom: 20px;
-            border: 1px solid #ddd; /* Обводка проекта */
-            border-radius: 8px; /* Скругление углов */
-            padding: 15px; /* Внутренние отступы */
-            background-color: #f9f9f9; /* Светлый фон для проектов */
-            box-shadow: 0 0 5px rgba(0,0,0,0.1); /* Тень для проектов */
+
+        button:hover {
+            background-color: #1ed760;
         }
-        .project img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px; /* Скругление углов для изображений */
+
+        .weather {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .weather img {
+            width: 100px;
+        }
+
+        .weather-info {
+            font-size: 1.5rem;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
+    <h1>Прогноз погоды</h1>
 
-<header>
-    <h1>Портфолио Endacho</h1>
-    <nav>
-        <ul>
-            <li><a href="#about">Обо мне</a></li> <!-- Кнопка "Обо мне" -->
-            <li><a href="#projects">Проекты</a></li>
-            <li><a href="#contact">Связь</a></li>
-            <li><a href="#steam">Стим</a></li>
-        </ul>
-    </nav>
-</header>
+    <input type="text" id="city" placeholder="Введите город">
+    <button onclick="getWeather()">Получить погоду</button>
 
-<section id="about"> <!-- Секция "Обо мне" -->
-    <h2>Обо мне</h2>
-    <p>Привет! Меня зовут Endacho, мне 15 лет, и я уже 2 года занимаюсь программированием. За это время я создал несколько проектов, и вот некоторые из них.</p>
-</section>
-
-<section id="projects"> <!-- Секция проектов -->
-    <h2>Проекты</h2>
-
-    <div class="project">
-        <h3>Проект 1: Дискорд Бот для крупного проекта по GTA 5 RP</h3>
-        <p>Снизу скрин основного функционала бота на Python</p>
-        <a href="https://imgur.com/a/cJwieEo" target="_blank">
-            <img src="https://imgur.com/a/cJwieEo" alt="Дискорд Бот">
-        </a>
+    <div class="weather" id="weather">
+        <!-- Погода будет отображаться здесь -->
     </div>
 
-    <div class="project">
-        <h3>Проект 2: Сайт для портфолио</h3>
-        <p>Сайт на котором вы сейчас находитесь</p>
-        <a href="https://imgur.com/a/LyvEVc6" target="_blank">
-            <img src="https://imgur.com/a/LyvEVc6" alt="Портфолио">
-        </a>
-    </div>
-
-    <div class="project">
-        <h3>Проект 3: Установщик</h3>
-        <p>Установщик.exe еще в разработке, скоро будет на сайте</p>
-        <a href="" target="_blank">
-            <img src="" alt="Пусто!">
-        </a>
-    </div>
-</section>
-
-<section id="contact">
-    <h2>Связь</h2>
-    <p>Свяжитесь со мной через email: <a href="mailto:ivan43454r43ryt4343@gmail.com">ivan43454r43ryt4343@gmail.com</a></p>
-    <p>Свяжитесь со мной через discord: <a href="mailto:discord.com">endacho.free</a></p>
-</section>
-
-<section id="steam">
-    <h2>Steam</h2>
-    <p>Добавьте меня в <a href="https://steamcommunity.com/profiles/76561199243882152/" target="_blank">Steam</a>, чтобы поиграть!</p>
-</section>
-
-<footer>
-    <p>© 2024 Портфолио Endacho</p>
-</footer>
-
+    <script>
+        async function getWeather() {
+            const city = document.getElementById("city").value;
+            if (city) {
+                const weather = await eel.get_weather(city)();
+                
+                const weatherDiv = document.getElementById("weather");
+                
+                if (weather.error) {
+                    weatherDiv.innerHTML = `<p>${weather.error}</p>`;
+                } else {
+                    weatherDiv.innerHTML = `
+                        <img src="http://openweathermap.org/img/wn/${weather.icon}@2x.png" alt="Icon">
+                        <div class="weather-info">
+                            <p><strong>${weather.city}</strong></p>
+                            <p>Температура: ${weather.temperature} °C</p>
+                            <p>Описание: ${weather.description}</p>
+                        </div>
+                    `;
+                }
+            }
+        }
+    </script>
 </body>
 </html>
